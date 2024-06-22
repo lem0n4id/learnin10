@@ -3,8 +3,9 @@
 Learn in 10 is a project to help you learn new things in 10 minutes or less. It's a simple platform where you can input a word or phrase and get a relevant guide to learn about it in 10 minutes or less.
 
 ## TODO
-- [ ] Make it deploy (vercel)
-- [ ] scaffold basic ui with mock data
+- [x] Make it deploy (vercel)
+- [x] scaffold basic ui with mock data
+  - [x] install and setup shadcn ui
 - [ ] Actually set up a database (vercel postgres)
 - [ ] Attach database to UI
 - [ ] Add authentication (w/ clerk)
