@@ -1,7 +1,7 @@
 'use client';
 import { set } from "zod";
-import { Button } from "../components/ui/button.tsx";
-import { Textarea } from "../components/ui/textarea.tsx";
+import { Button } from "@/components/ui/button.tsx";
+import { Textarea } from "@/components/ui/textarea.tsx";
 import Link from "next/link"
 import { useState } from "react"; 
 
