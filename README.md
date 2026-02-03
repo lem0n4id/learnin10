@@ -9,10 +9,7 @@ Learn in 10 is a project to help you learn new things in 10 minutes or less. It'
 - [ ] Actually set up a database (vercel postgres)
 - [ ] Attach database to UI
 - [ ] Add authentication (w/ clerk)
-- [ ] Add image upload
 - [ ] Error management (w/ sentry)
-- [ ] Routing/image page (parallel route)
-- [ ] Delete button (w/ server Actions)
 - [ ] Analytics (posthog)
 - [ ] Ratelimiting (upstash)
 
