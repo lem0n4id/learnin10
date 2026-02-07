@@ -37,7 +37,7 @@ also refer https://github.com/dan5py/turborepo-shadcn-ui
    - Create `packages/db`, `packages/llm`, `packages/core`, `packages/auth` and decide which code migrates vs remains app-specific (Next middleware stays in web, shared helpers can be in packages).
    - Update workspace scripts so `dev`, `build`, `lint`, and Drizzle commands still work from the repo root.
 
-2. Fix pathing + tooling after the move (monorepo “plumbing”)
+2. DONE Fix pathing + tooling after the move (monorepo “plumbing”)
    - Update TS path aliases: today they point at `./src/*` in tsconfig.json; in the new structure, `apps/web/tsconfig.json` should keep `~/*` resolving to `apps/web/src/*`.
    - Update shadcn config: components.json currently points to globals.css and tailwind.config.ts; adjust these to the new `apps/web` locations so future `shadcn-ui add` writes correctly.
    - Update Tailwind scan paths: tailwind.config.ts currently scans `./src/**/*`; expand to include `apps/web/src/**/*` and any package paths containing UI (if you share UI later).
