@@ -2,7 +2,14 @@
 
 Learn in 10 is a project to help you learn new things in 10 minutes or less. It's a simple platform where you can input a word or phrase and get a relevant guide to learn about it in 10 minutes or less.
 
+## Tools configured
+
+- [TypeScript](https://www.typescriptlang.org/) for static type checking
+- [ESLint](https://eslint.org/) for code linting
+- [Prettier](https://prettier.io/) for code formatting
+
 ## TODO
+
 - [x] Make it deploy (vercel)
 - [x] scaffold basic ui with mock data
   - [x] install and setup shadcn ui
@@ -12,8 +19,16 @@ Learn in 10 is a project to help you learn new things in 10 minutes or less. It'
 - [ ] Error management (w/ sentry)
 - [ ] Analytics (posthog)
 - [ ] Ratelimiting (upstash)
+- [ ] create a docs site (astro starlight)
+- [ ] create docs updating skill (refer https://github.com/vercel/next.js/tree/canary/.claude/skills/update-docs)
+- [ ] configure changesets (refer https://github.com/vercel/turborepo/tree/main/examples/design-system)
+- [ ] optimise turborepo config (refer https://vercel.com/academy/production-monorepos)
+- [ ] use dotenv instead of import { env } from "~/env";
+
+also refer https://github.com/vercel/next-forge/tree/main = production-ready Next.js boilerplate with turborepo
 
 **Steps**
+
 1. Convert repo to npm workspaces monorepo
    - Create `apps/web` and move the current Next.js app there (today it lives under page.tsx and layout.tsx).
    - Add `apps/docs` for Astro Starlight docs site.
@@ -70,6 +85,7 @@ Learn in 10 is a project to help you learn new things in 10 minutes or less. It'
    - Keep it “in repo” and linked from the web app footer/header if desired (no new UX pages beyond what’s required for docs discovery).
 
 **Verification**
+
 - Workspace health:
   - `npm install` (root)
   - `npm run lint` and `npm run build` for each workspace app
@@ -80,6 +96,7 @@ Learn in 10 is a project to help you learn new things in 10 minutes or less. It'
   - Quota: set low quota in config, generate until blocked, confirm messaging and reset behavior
 
 **Decisions**
+
 - Monorepo: do it now with npm workspaces (you chose this).
 - Docs: Astro Starlight for an in-repo docs app (you chose this).
 - Generation: non-streaming sync response for MVP; streaming is a later phase (you chose this).

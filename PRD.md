@@ -22,13 +22,13 @@
   - **Returning learner**: wants history, rename, and deletion.
 
 - **User Stories**
-  1) As a user, I want to sign up/sign in with email and OAuth so that my guides are saved securely.  
-  2) As a user, I want to enter a topic/prompt and generate a structured “10-minute” guide so that I can learn the basics quickly.  
-  3) As a user, I want to see my saved guides so that I can revisit them later.  
-  4) As a user, I want to open a saved guide detail view so that I can read the full content.  
-  5) As a user, I want to rename a saved guide so that my history is easier to scan.  
-  6) As a user, I want to delete a guide so that I can remove content I don’t want stored.  
-  7) As a user, I want a daily quota so that usage is fair and costs are controlled.
+  1. As a user, I want to sign up/sign in with email and OAuth so that my guides are saved securely.
+  2. As a user, I want to enter a topic/prompt and generate a structured “10-minute” guide so that I can learn the basics quickly.
+  3. As a user, I want to see my saved guides so that I can revisit them later.
+  4. As a user, I want to open a saved guide detail view so that I can read the full content.
+  5. As a user, I want to rename a saved guide so that my history is easier to scan.
+  6. As a user, I want to delete a guide so that I can remove content I don’t want stored.
+  7. As a user, I want a daily quota so that usage is fair and costs are controlled.
 
 - **Acceptance Criteria**
   - **Authentication**
@@ -94,12 +94,8 @@
       "overview": "...",
       "keyConcepts": ["...", "..."],
       "tenMinutePlan": ["step1", "step2"],
-      "examples": [
-        { "title": "...", "code": "..." }
-      ],
-      "furtherReading": [
-        { "title": "...", "url": "..." }
-      ]
+      "examples": [{ "title": "...", "code": "..." }],
+      "furtherReading": [{ "title": "...", "url": "..." }]
     }
     ```
   - Rendering rules:
@@ -124,10 +120,10 @@
     - packages/core: generation workflow service (validation → quota → job lifecycle → persistence)
     - packages/auth: Clerk integration helpers (server-side user identity + guard utilities)
   - Data flow (sync MVP):
-    1) User submits prompt from web UI
-    2) Web API endpoint calls core generation service
-    3) Core service validates input, enforces quota, creates job + guide rows, calls packages/llm
-    4) Core service updates job status + metadata and returns the saved guide payload
+    1. User submits prompt from web UI
+    2. Web API endpoint calls core generation service
+    3. Core service validates input, enforces quota, creates job + guide rows, calls packages/llm
+    4. Core service updates job status + metadata and returns the saved guide payload
   - Async migration readiness:
     - Same service boundary remains; only execution model changes (queue + worker picks up queued jobs).
 
@@ -161,9 +157,9 @@
 
 - **Config Precedence**
   - Precedence rule (highest wins):
-    1) Env hard caps
-    2) DB config (runtime)
-    3) Env defaults (seed)
+    1. Env hard caps
+    2. DB config (runtime)
+    3. Env defaults (seed)
 
 - **Measurable Limits (Default Targets)**
   - These are sourced from DB config at runtime, bounded by env hard caps:
