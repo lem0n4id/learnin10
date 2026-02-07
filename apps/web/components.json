@@ -12,6 +12,7 @@
   },
   "aliases": {
     "components": "~/components",
-    "utils": "~/lib/utils"
+    "utils": "@learnin10/ui/lib/utils",
+    "ui": "@learnin10/ui/components/ui"
   }
 }

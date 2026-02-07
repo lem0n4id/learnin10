@@ -28,7 +28,9 @@
     "baseUrl": ".",
     "paths": {
       "~/*": ["./src/*"],
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@learnin10/ui": ["../../packages/ui/src/index.ts"],
+      "@learnin10/ui/*": ["../../packages/ui/src/*"]
     }
   },
   "include": [

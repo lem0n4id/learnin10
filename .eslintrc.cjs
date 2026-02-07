@@ -4,7 +4,11 @@ const config = {
   parser: "@typescript-eslint/parser",
   parserOptions: {
     tsconfigRootDir: __dirname,
-    project: ["./apps/web/tsconfig.json", "./packages/db/tsconfig.json"],
+    project: [
+      "./apps/web/tsconfig.json",
+      "./packages/db/tsconfig.json",
+      "./packages/ui/tsconfig.json",
+    ],
   },
   plugins: ["@typescript-eslint", "drizzle"],
   extends: [

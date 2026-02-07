@@ -6,6 +6,7 @@
     "build": "turbo build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
+    "ui:add": "npx shadcn@latest add --cwd packages/ui",
     "db:generate": "npm --workspace @learnin10/db run db:generate",
     "db:migrate": "npm --workspace @learnin10/db run db:migrate",
     "db:push": "npm --workspace @learnin10/db run db:push",

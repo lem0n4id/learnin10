@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "target": "es2022",
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "moduleDetection": "force",
+    "isolatedModules": true,
+    "allowImportingTsExtensions": true,
+
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+
+    "lib": ["ES2022", "DOM"],
+    "noEmit": true,
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "jsx": "preserve",
+    "baseUrl": ".",
+    "paths": {
+      "@learnin10/ui": ["./src/index.ts"],
+      "@learnin10/ui/*": ["./src/*"],
+      "@learnin10/ui/components": ["./src/components"],
+      "@learnin10/ui/components/*": ["./src/components/*"],
+      "@learnin10/ui/components/ui": ["./src/components/ui"],
+      "@learnin10/ui/components/ui/*": ["./src/components/ui/*"],
+      "@learnin10/ui/lib/utils": ["./src/lib/utils.ts"]
+    }
+  },
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
+}

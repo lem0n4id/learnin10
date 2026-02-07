@@ -27,6 +27,8 @@ Learn in 10 is a project to help you learn new things in 10 minutes or less. It'
 
 also refer https://github.com/vercel/next-forge/tree/main = production-ready Next.js boilerplate with turborepo
 
+also refer https://github.com/dan5py/turborepo-shadcn-ui
+
 **Steps**
 
 1. DONE Convert repo to npm workspaces monorepo
