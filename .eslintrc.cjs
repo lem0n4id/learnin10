@@ -6,6 +6,7 @@ const config = {
     tsconfigRootDir: __dirname,
     project: [
       "./apps/web/tsconfig.json",
+      "./apps/docs/tsconfig.json",
       "./packages/db/tsconfig.json",
       "./packages/ui/tsconfig.json",
     ],
