@@ -1,10 +1,12 @@
 {
   "$schema": "https://turborepo.dev/schema.json",
+  "globalEnv": ["DATABASE_URL"],
   "tasks": {
     "build": {
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
       "dependsOn": ["^build"],
-      "outputs": [".next/**", "!.next/cache/**"]
+      "outputs": [".next/**", "!.next/cache/**"],
+      "env": ["DATABASE_URL"]
     },
     "check-types": {
       "dependsOn": ["^check-types"]
