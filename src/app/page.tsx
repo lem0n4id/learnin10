@@ -1,19 +1,11 @@
-'use client';
-import { set } from "zod";
-import { Button } from "@/components/ui/button.tsx";
-import { Textarea } from "@/components/ui/textarea.tsx";
-import Link from "next/link"
-import { useState } from "react"; 
+import { SearchForm } from "~/components/search-form";
+import { db } from "~/server/db";
 
+export const dynamic = "force-dynamic";
 
-export default function HomePage() {
-  const [search, setSearch] = useState('');
-
-  const handleSearch = () => {
-    // e.preventDefault();
-    setSearch('🚧App construction under progress🚧');
-    console.log(search);
-  }
+export default async function HomePage() {
+  const posts = await db.query.posts.findMany();
+  console.log(posts);
 
   return (
     <section className="w-full h-screen py-12 md:py-24 lg:py-32 xl:py-48 bg-black">
@@ -27,34 +19,29 @@ export default function HomePage() {
               <p className="max-w-[600px] text-zinc-200 md:text-xl dark:text-zinc-100 mx-auto">
                 Welcome to Learn in 10! Discover new skills in just 10 minutes. Boost productivity, learn a language, or explore a hobby. Start your learning journey now!
               </p>
-            </div>
-            <div className="w-full max-w-3xl space-y-2 mx-auto">
-              {/* this is a form, div for now */}
-              <div className="flex space-x-2 justify-center items-center">
-                <Textarea
-                  className="flex-1 bg-gray-800 text-white border-gray-900 resize-none placeholder:text-lg"
-                  placeholder="What would you like to learn today?"
-                />
-                <Button 
-                  className="bg-white text-black h-[60px] text-lg" 
-                  
-                  onClick={handleSearch}>
-                  Start Learning
-                </Button>
+              <div className="flex flex-col items-center gap-4 mt-8">
+                <h2 className="text-xl text-white font-semibold">Database Posts:</h2>
+                <div className="space-y-2">
+                  {posts.length === 0 ? (
+                    <p className="text-zinc-400">No posts yet</p>
+                  ) : (
+                    posts.map((post) => (
+                      <div key={post.id} className="bg-gray-800 p-4 rounded-lg text-white">
+                        <p className="font-semibold">ID: {post.id}</p>
+                        <p className="text-lg">{post.name}</p>
+                        <p className="text-sm text-zinc-400">
+                          Created: {post.createdAt.toLocaleDateString()}
+                        </p>
+                      </div>
+                    ))
+                  )}
+                </div>
               </div>
-              <p className="text-3xl text-zinc-200 dark:text-zinc-100 text-center">
-                {search}
-              </p>
-              {/* <p className="text-xs text-zinc-200 dark:text-zinc-100">
-                Get ready to redefine your email experience.
-                <Link className="underline underline-offset-2 text-white" href="#" prefetch={false}>
-                  Terms & Conditions
-                </Link>
-              </p> */}
             </div>
+            <SearchForm />
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }
