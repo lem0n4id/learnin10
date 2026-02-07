@@ -3,10 +3,16 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
+    "build": "turbo build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
+    "db:generate": "npm --workspace @learnin10/db run db:generate",
+    "db:migrate": "npm --workspace @learnin10/db run db:migrate",
+    "db:push": "npm --workspace @learnin10/db run db:push",
+    "db:studio": "npm --workspace @learnin10/db run db:studio",
     "clean": "turbo run clean && rm -rf node_modules",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx}\"",
+    "format:turbo": "turbo run format"
   },
   "packageManager": "npm@10.5.0",
   "workspaces": [

@@ -1,12 +1,12 @@
 import { type Config } from "drizzle-kit";
 
-import { env } from "~/env";
+import { keys } from "./src/keys";
 
 export default {
-  schema: "./src/server/db/schema.ts",
+  schema: "./src/schema.ts",
   dialect: "postgresql",
   dbCredentials: {
-    url: env.DATABASE_URL,
+    url: keys().DATABASE_URL,
   },
   tablesFilter: ["learnin10_*"],
 } satisfies Config;

@@ -1,5 +1,5 @@
 import { SearchForm } from "~/components/search-form";
-import { db } from "~/server/db";
+import { db } from "@learnin10/db";
 
 export const dynamic = "force-dynamic";
 

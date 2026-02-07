@@ -23,13 +23,13 @@ Learn in 10 is a project to help you learn new things in 10 minutes or less. It'
 - [ ] create docs updating skill (refer https://github.com/vercel/next.js/tree/canary/.claude/skills/update-docs)
 - [ ] configure changesets (refer https://github.com/vercel/turborepo/tree/main/examples/design-system)
 - [ ] optimise turborepo config (refer https://vercel.com/academy/production-monorepos)
-- [ ] use dotenv instead of import { env } from "~/env";
+- [x] use dotenv instead of import { env } from "~/env" (for DB tooling)
 
 also refer https://github.com/vercel/next-forge/tree/main = production-ready Next.js boilerplate with turborepo
 
 **Steps**
 
-1. Convert repo to npm workspaces monorepo
+1. DONE Convert repo to npm workspaces monorepo
    - Create `apps/web` and move the current Next.js app there (today it lives under page.tsx and layout.tsx).
    - Add `apps/docs` for Astro Starlight docs site.
    - Create `packages/db`, `packages/llm`, `packages/core`, `packages/auth` and decide which code migrates vs remains app-specific (Next middleware stays in web, shared helpers can be in packages).
